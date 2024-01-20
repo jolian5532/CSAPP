@@ -1,0 +1,13 @@
+* Single-Instruction, Multiple-Data (SIMD) Parallelism
+At the lowest level, many modern processors have special hardware that allows
+a single instruction to cause multiple operations to be performed in parallel,
+a mode known as single-instruction, multiple-data, or “SIMD” parallelism. For
+example, recent generations of Intel and AMD processors have instructions that
+can add four pairs of single-precision ﬂoating-point numbers (C data type float)
+in parallel.
+These SIMD instructions are provided mostly to speed up applications that
+process image, sound, and video data. Although some compilers attempt to auto-
+matically extract SIMD parallelism from C programs, a more reliable method is to
+write programs using special vector data types supported in compilers such as gcc.
+We describe this style of programming in Web Aside opt:simd, as a supplement to
+the more general presentation on program optimization found in Chapter 5.

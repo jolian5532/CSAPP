@@ -1,0 +1,25 @@
+Arithmetic shift and logical shift are two types of bitwise shift operations used in computer programming and digital logic design. They differ in how they handle the sign bit (the leftmost bit) when shifting.
+
+    Logical Shift:
+        Logical shifting involves shifting the bits of a binary number to the left or right.
+        In a left logical shift (<<), zeros are shifted into the vacant positions on the right, and the leftmost bits are lost.
+        In a right logical shift (>>), zeros are shifted into the vacant positions on the left.
+        Logical shifts are commonly used for unsigned integers or when you want to treat a binary number as a simple bit pattern without considering its sign.
+
+    Example of right logical shift (assuming 8-bit numbers):
+
+10101011 >> 2 = 00101010
+
+Arithmetic Shift:
+
+    Arithmetic shifting, like logical shifting, involves shifting the bits of a binary number to the left or right.
+    In a left arithmetic shift (<<), zeros are shifted into the vacant positions on the right, and the leftmost bits are lost. The difference is that the leftmost bit (sign bit) retains its value, effectively preserving the sign of the number.
+    In a right arithmetic shift (>>), the leftmost bit (sign bit) is duplicated to fill the vacant positions on the left.
+    Arithmetic shifts are commonly used for signed integers, as they preserve the sign during right shifts.
+
+Example of right arithmetic shift (assuming 8-bit signed numbers):
+
+    11011011 >> 2 = 11110110
+
+In summary, the key difference is how the sign bit is handled during the shift operation. Logical shifts insert zeros, while arithmetic shifts replicate the sign bit to maintain the sign of the number.
+

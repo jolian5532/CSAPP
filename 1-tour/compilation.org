@@ -1,0 +1,8 @@
+* Programs Are Translated by Other programrs into Different Forms
+
+| hello.c       | Pre-processor(cpp) | hello.i                | Compiler(cc1) | hello.s          | Assembler(as) | hello.o+printf.o         | Linker(ld)   | hello             |
+| Source (text) | gcc -E             | Modified Source (text) | gcc -S        | Assembley (text) | gcc -c        | Relocatable Object (bin) | gcc -o or -l | Executable Object |
+
+
+
+
