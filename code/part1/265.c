@@ -35,18 +35,22 @@ SMH!! was gonna do recursion
 
 */
 #include <stdio.h>
+#include <assert.h>
 
 int odd_ones(unsigned x){
-  x ^= (x >> 16);
-  x ^= (x >> 8);
-  x ^= (x >> 4);
-  x ^= (x >> 2);
-  x ^= (x >> 1);
-  return x & 1;  
+  x = x  ^(x >> 16);
+  printf("%b\n",x);
+  return  0;  
 }
 
 
 int main(){
-  printf("%d\n",odd_ones(0b0100000100000101)); // odd
+  //printf("%d\n",odd_ones(0b0100000100000101)); // odd
+  //1100000100000101
+  odd_ones(0b10000000000000011000000000000001);
+  //odd_ones(0x10101011);
+  //odd_ones(0x01010101);
+  //assert(odd_ones(0x10101011));
+  //assert(!odd_ones(0x01010101));
   
 }
