@@ -23,20 +23,29 @@ shifts, along with one subtraction.
 
 */
 #include <stdio.h>
+#include <limits.h>
 typedef unsigned packed_t;
+
+// code from 263.c lol 
+int sra(int x, int k) {
+  int xsrl = (unsigned) x >> k;
+  return(((-1 << (8*sizeof(int) - k)) ^ xsrl) & (~(-1 << (8*sizeof(int) -k))) | (INT_MIN&x)>>k);
+}
 
 int xbyte(packed_t word, int bytenum)
 {
     // doesn't give a correct two’s-complement rep
    //  return (word >> (bytenum << 3)) & 0xFF;
-   // TODO
-   return ();
+   /*    
+   */
+    int n = (bytenum+1)*8;
+    word = word << (32 - n);
+    return (sra(word,24));
 }
 
 
- 
-int main(){
 
-    printf("%x\n",xbyte(0xff345678,3));
+int main(){
+    printf("%x\n",xbyte(0xff3456ff,2));
     return 0;
 }
